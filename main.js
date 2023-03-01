@@ -55,3 +55,21 @@ var roastSelection = document.querySelector('#roast-selection');
 tbody.innerHTML = renderCoffees(coffees);
 
 submitButton.addEventListener('click', updateCoffees);
+
+
+function roastSelection(x) {
+    for(var i = 0; i < coffees.roast.length; i++) {
+        if( i == 'light') {
+            // insert dom event
+        }
+        else if(i == 'medium') {
+            // insert dom event
+        }
+        else if(i == 'dark') {
+            // insert dom event
+        }
+        else(i == undefined) {
+            // insert dom event
+        }
+    }
+}
