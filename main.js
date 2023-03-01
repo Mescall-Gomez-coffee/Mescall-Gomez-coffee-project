@@ -57,15 +57,18 @@ tbody.innerHTML = renderCoffees(coffees);
 submitButton.addEventListener('click', updateCoffees);
 
 
+
+// function for scanning through roast selection and displaying it on left hand side of screen
 function roastSelection(x) {
-    for(var i = 0; i < coffees.roast.length; i++) {
-        if( i == 'light') {
+    for(var i = 0; i < coffees.roast[1]; i++) {
+        if( i == 'l') {
+            var col3 = document.querySelector('.col-3');
+            col3.innerHTML="Light City";
+        }
+        else if(i == 'm') {
             // insert dom event
         }
-        else if(i == 'medium') {
-            // insert dom event
-        }
-        else if(i == 'dark') {
+        else if(i == 'd') {
             // insert dom event
         }
         else(i == undefined) {
