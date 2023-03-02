@@ -52,44 +52,70 @@ var coffees = [
     {id: 13, name: 'Italian', roast: 'dark'},
     {id: 14, name: 'French', roast: 'dark'},
 ];
-//sort coffee in ascending order
-let sortedCoffee = coffees.sort();
+// //sort coffee in ascending order
+// let sortedCoffee = coffees.sort();
+//
+// //reference
+// let input= document.getElementById('input');
+//
+// //function on key up
+// input.addEventListener("keyup", (e) =>{
+//     //loop through above array
+//     for(let i of sortedCoffee)
+//         //convert input to lowercase and compate with each string
+//         if(
+//             i.toLowerCase().startsWith(input.value.toLowerCase())&&
+//             input.value != ""
+//         ){
+//             //li elements
+//             let listItem= document.createElement("li");
+//             listItem.classList.add("coffees");
+//             listItem.style.cursor = "pointer";
+//             listItem.setAttribute("onclick", "displayNames('"+ i +"')");
+//             //display matched part in bold
+//             let word= "<b>" + i.substr(0, input.value.length) + "</b>";
+//             word += i.substr(input.value.length);
+//             //display value in array
+//             listItem.innerHTML= word;
+//             document.querySelector(".list").appendChild(listItem);
+//         }
+// });
+// function displayCoffees(value){
+//     input.value=value
+// }
+// function removeElemens(){
+//     //clear item
+//     let items= document.querySelectorAll(".coffees");
+//     items.forEach((item)=> {
+//         item.remove();
+//     });
+// }
 
-//reference
-let input= document.getElementById('input');
-
-//function on key up
-input.addEventListener("keyup", (e) =>{
-    //loop through above array
-    for(let i of sortedCoffee)
-        //convert input to lowercase and compate with each string
-        if(
-            i.toLowerCase().startsWith(input.value.toLowerCase())&&
-            input.value != ""
-        ){
-            //li elements
-            let listItem= document.createElement("li");
-            listItem.classList.add("list-items");
-            listItem.style.cursor = "pointer";
-            listItem.setAttribute("onclick", "displayNames('"+ i +"')");
-            //display matched part in bold
-            let word= "<b>" + i.substr(0, input.value.length) + "</b>";
-            word += i.substr(input.value.length);
-            //display value in array
-            listItem.innerHTML= word;
-            document.querySelector(".list").appendChild(listItem);
-        }
-});
-function displayCoffees(value){
-    input.value=value
-}
-function removeElemens(){
-    //clear item
-    let items= document.querySelectorAll(".list-items");
-    items.forEach((item)=> {
-        item.remove();
-    });
-}
+// //testing-testing-testing-testing-testing-testing-testing-testing-
+// var search_terms = coffees
+//
+// function autocompleteMatch(input) {
+//     if (input == '') {
+//         return [];
+//     }
+//     var reg = new RegExp(input)
+//     return search_terms.filter(function(term) {
+//         if (term.match(reg)) {
+//             return term;
+//         }
+//     });
+// }
+//
+// function showResults(val) {
+//     res = document.getElementById("result");
+//     res.innerHTML = '';
+//     let list = '';
+//     let terms = autocompleteMatch(val);
+//     for (i=0; i<terms.length; i++) {
+//         list += '<li>' + terms[i] + '</li>';
+//     }
+//     res.innerHTML = '<ul>' + list + '</ul>';
+// }
 
 
 
@@ -99,19 +125,56 @@ var roastSelection = document.querySelector('#roast-selection');
 console.log(tbody);
 tbody.innerHTML = renderCoffees(coffees);
 
-submitButton.addEventListener('click', updateCoffees);
+// submitButton.addEventListener('click', updateCoffees);
 
-//event to connect input field to function that listens for changes in text
-var popCoffee = document.getElementById('name-selection')
-//function that is being used in part with listener event
-function nameScan(coffees){
-    for(var i = coffees.length - 1; i >= 0; i--){
-       while(popCoffee) {
-            var x = "is this working";
-       }
-    }
-    return x;
+
+// function that is being used in part with listener event
+// function nameScan(coffees){
+//     //event to connect input field to function that listens for changes in text
+//     var popCoffee = document.getElementById('name-selection').addEventListener('input',)
+//     // array to store keystroke events
+//     var coffeeArr = [];
+//     // loop for storing each key stroke
+//     for(var i = coffees.length - 1; i >= 0; i--){
+//        while(popCoffee !== null) {
+//             coffeeArr +=
+//             // conditionals for comparing stored keystrokes with coffees present
+//                 coffees.name[i];
+//        }
+//     }
+//     return coffeeArr;
+// }
+
+
+const searchInput = document.querySelector('#name-selection');
+const coffeeList = document.querySelector('#coffees');
+
+function displayCoffees() {
+    // Clear the coffee list
+    coffeeList.innerHTML = '';
+
+    // Get the user's search input
+    const searchValue = searchInput.value.toLowerCase();
+
+    // Filter the coffees based on the search input
+    const filteredCoffees = coffees.filter(coffee => {
+        return coffee.name.toLowerCase().includes(searchValue);
+    });
+
+    // Display the filtered coffees
+    filteredCoffees.forEach(coffee => {
+        const li = document.createElement('li');
+        li.textContent = coffee.name;
+        coffeeList.appendChild(li);
+    });
 }
+
+// Listen for input events on the search field
+searchInput.addEventListener('input', displayCoffees);
+
+
+
+
 // ***currently working on function nameScan ability to pull coffee names when coffee name is typed into input field
 
 
