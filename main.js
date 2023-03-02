@@ -1,11 +1,15 @@
 "use strict"
 
+
+// let otherHTML = '<p class="` + thing.id + '">' + 4+6 + '</p>';
+
+//changing from table rows to divs
 function renderCoffee(coffee) {
-    var html = '<tr class="coffee">';
-    html += '<td>' + coffee.id + '</td>';
-    html += '<td>' + coffee.name + '</td>';
-    html += '<td>' + coffee.roast + '</td>';
-    html += '</tr>';
+    var html = '<div class="coffee">';
+    html += '<div class"' + coffee.id + '"></div>';
+    html += '<div>' + coffee.name + '</div>';
+    html += '<p>' + coffee.roast + '</p>';
+    html += '</div>';
 
     return html;
 }
@@ -15,6 +19,7 @@ function renderCoffees(coffees) {
     for(var i = coffees.length - 1; i >= 0; i--) {
         html += renderCoffee(coffees[i]);
     }
+    console.log(html);
     return html;
 }
 
@@ -51,7 +56,7 @@ var coffees = [
 var tbody = document.querySelector('#coffees');
 var submitButton = document.querySelector('#submit');
 var roastSelection = document.querySelector('#roast-selection');
-
+console.log(tbody);
 tbody.innerHTML = renderCoffees(coffees);
 
 submitButton.addEventListener('click', updateCoffees);
@@ -76,3 +81,12 @@ submitButton.addEventListener('click', updateCoffees);
 //         }
 //     }
 // }
+
+
+//code to pull coffee by id
+
+var light = document.getElementsByTagName('id');
+
+for(var i=0; i< light.length; i++){
+    console.log(light[4])
+}
