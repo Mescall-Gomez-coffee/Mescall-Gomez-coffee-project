@@ -61,13 +61,18 @@ tbody.innerHTML = renderCoffees(coffees);
 
 submitButton.addEventListener('click', updateCoffees);
 
-
-function nameScan(x){
+//event to connect input field to function that listens for changes in text
+var popCoffee = document.getElementById('name-selection')
+//function that is being used in part with listener event
+function nameScan(coffees){
     for(var i = coffees.length - 1; i >= 0; i--){
-       while(document.getElementById('name-selection').addEventListener() )
+       while(popCoffee) {
+            var x = "is this working";
+       }
     }
+    return x;
 }
-
+// ***currently working on function nameScan ability to pull coffee names when coffee name is typed into input field
 
 
 // var tbody = document.querySelector('#coffees');
