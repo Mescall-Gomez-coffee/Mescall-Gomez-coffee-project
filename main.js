@@ -62,6 +62,20 @@ tbody.innerHTML = renderCoffees(coffees);
 submitButton.addEventListener('click', updateCoffees);
 
 
+function nameScan(x){
+    for(var i = coffees.length - 1; i >= 0; i--){
+       while(document.getElementById('name-selection').addEventListener() )
+    }
+}
+
+
+
+// var tbody = document.querySelector('#coffees');
+// var submitButton = document.querySelector('#submit');
+// var roastSelection = document.querySelector('#name-selection');
+
+
+// submitButton.addEventListener('click', updateCoffees);
 
 // function for scanning through roast selection and displaying it on left hand side of screen
 // function roastSelection(x) {
@@ -85,8 +99,8 @@ submitButton.addEventListener('click', updateCoffees);
 
 //code to pull coffee by id
 
-var light = document.getElementsByTagName('id');
-
-for(var i=0; i< light.length; i++){
-    console.log(light[4])
-}
+// var light = document.getElementsByTagName('id');
+//
+// for(var i=0; i< light.length; i++){
+//     console.log(light[4])
+// }
