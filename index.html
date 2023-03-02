@@ -27,80 +27,78 @@
 <!--        <input id="submit" type="submit" />-->
 
 
-        <label for="name-selection"></label>
-        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" id="name-selection">
+<!--        <label for="name-selection"></label>-->
+<!--        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" id="name-selection">-->
         <!--    creating coffees on left side-->
-        <div id="coffees"></div>
+<!--        <div id="coffees"></div>-->
     </form>
 
 
 
+    <!--row to contain col elements for left and right sides of page-->
+    <div class="row">
+        <!--column containing different coffee choices on left hand side-->
+        <div class="container col-6 d-flex justify-content-center">
+            <div class="row ">
+                <div class="col-6 ">
+                    <div id="coffees"></div>
+                </div>
+            </div>
+        </div>
 
-
-
-
-<!--    &lt;!&ndash;row to contain col elements for left and right sides of page&ndash;&gt;-->
-<!--    <div class="row">-->
-<!--        &lt;!&ndash;column containing different coffee choices on left hand side&ndash;&gt;-->
-<!--        <div class="container col-6 d-flex justify-content-center">-->
-<!--            <div class="row ">-->
-<!--                <div class="col-6 ">-->
-<!--                    asdf-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-
-<!--        &lt;!&ndash;column containing coffee ordering system on right hand side&ndash;&gt;-->
-<!--        &lt;!&ndash;    top drop down menu&ndash;&gt;-->
-<!--        <div class="container col-6">-->
-<!--            <div class="container border border-primary" id="topDrop">-->
-<!--                &lt;!&ndash;coffee roast dropdown&ndash;&gt;-->
-<!--                <div>-->
-<!--                    <h6>Roast</h6>-->
-<!--                    <select class="form-select" aria-label="Default select example">-->
-<!--                        <option selected>all</option>-->
-<!--                        <option>Light</option>-->
-<!--                        <option>Medium</option>-->
-<!--                        <option>Dark</option>-->
-<!--                    </select>-->
-<!--                </div>-->
-<!--                <div>-->
-<!--                    &lt;!&ndash;                coffee name input&ndash;&gt;-->
-<!--                    <h6>Coffee Name</h6>-->
-<!--                    <div class="input-group mb-3">-->
-<!--                        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--                <div class="row">-->
-<!--                    <button class="col btn btn-primary" type="button">Submit</button>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--            &lt;!&ndash;bottom drop down menu&ndash;&gt;-->
-<!--            <div class="container border border-primary" id="bottomDrop">-->
-<!--                &lt;!&ndash;                coffee roast dropdown&ndash;&gt;-->
-<!--                <div>-->
-<!--                    <h3>Add a Coffee</h3>-->
-<!--                    <h6>Roast</h6>-->
-<!--                    <select class="form-select" aria-label="Default select example">-->
-<!--                        <option selected>all</option>-->
-<!--                        <option>Light</option>-->
-<!--                        <option>Medium</option>-->
-<!--                        <option>Dark</option>-->
-<!--                    </select>-->
-<!--                </div>-->
-<!--                <div>-->
-<!--                    &lt;!&ndash;                coffee name input&ndash;&gt;-->
-<!--                    <h6>Name</h6>-->
-<!--                    <div class="input-group mb-3">-->
-<!--                        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--                <div class="row">-->
-<!--                    <button class="col btn btn-primary" type="button">Submit</button>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
+        <!--column containing coffee ordering system on right hand side-->
+        <!--    top drop down menu-->
+        <div class="container col-6">
+            <div class="container border border-primary" id="topDrop">
+                <!--coffee roast dropdown-->
+                <div>
+                    <h6>Roast</h6>
+                    <label for="roast-selection"></label>
+                    <select class="form-select" id="roast-selection" aria-label="Default select example">
+                        <option selected>all</option>
+                        <option>Light</option>
+                        <option>Medium</option>
+                        <option>Dark</option>
+                    </select>
+                </div>
+                <div>
+                    <!--                coffee name input-->
+                    <h6>Coffee Name</h6>
+                    <div class="input-group mb-3">
+                        <label for="name-selection"></label>
+                        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" id="name-selection">
+                    </div>
+                </div>
+                <div class="row">
+                    <button class="col btn btn-primary" type="button">Submit</button>
+                </div>
+            </div>
+            <!--bottom drop down menu-->
+            <div class="container border border-primary" id="bottomDrop">
+                <!--                coffee roast dropdown-->
+                <div>
+                    <h3>Add a Coffee</h3>
+                    <h6>Roast</h6>
+                    <select class="form-select" aria-label="Default select example">
+                        <option selected>all</option>
+                        <option>Light</option>
+                        <option>Medium</option>
+                        <option>Dark</option>
+                    </select>
+                </div>
+                <div>
+                    <!--                coffee name input-->
+                    <h6>Name</h6>
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                    </div>
+                </div>
+                <div class="row">
+                    <button class="col btn btn-primary" type="button">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
 
