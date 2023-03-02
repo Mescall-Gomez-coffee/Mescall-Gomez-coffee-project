@@ -52,6 +52,46 @@ var coffees = [
     {id: 13, name: 'Italian', roast: 'dark'},
     {id: 14, name: 'French', roast: 'dark'},
 ];
+//sort coffee in ascending order
+let sortedCoffee = coffees.sort();
+
+//reference
+let input= document.getElementById('input');
+
+//function on key up
+input.addEventListener("keyup", (e) =>{
+    //loop through above array
+    for(let i of sortedCoffee)
+        //convert input to lowercase and compate with each string
+        if(
+            i.toLowerCase().startsWith(input.value.toLowerCase())&&
+            input.value != ""
+        ){
+            //li elements
+            let listItem= document.createElement("li");
+            listItem.classList.add("list-items");
+            listItem.style.cursor = "pointer";
+            listItem.setAttribute("onclick", "displayNames('"+ i +"')");
+            //display matched part in bold
+            let word= "<b>" + i.substr(0, input.value.length) + "</b>";
+            word += i.substr(input.value.length);
+            //display value in array
+            listItem.innerHTML= word;
+            document.querySelector(".list").appendChild(listItem);
+        }
+});
+function displayCoffees(value){
+    input.value=value
+}
+function removeElemens(){
+    //clear item
+    let items= document.querySelectorAll(".list-items");
+    items.forEach((item)=> {
+        item.remove();
+    });
+}
+
+
 
 var tbody = document.querySelector('#coffees');
 var submitButton = document.querySelector('#submit');
