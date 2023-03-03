@@ -6,9 +6,9 @@
 //changing from table rows to divs
 function renderCoffee(coffee) {
     var html = '<div class="coffee">';
-    html += '<div class"' + coffee.id + '"></div>';
-    html += '<div>' + coffee.name + '</div>';
-    html += '<p>' + coffee.roast + '</p>';
+    html += '<span class"' + coffee.id + '"></span>';
+    html += '<text class="text-#9b4c38">' + coffee.name + " " + '</text>';
+    html += '<text class="text-black">' + coffee.roast + '</text>';
     html += '</div>';
 
     return html;
@@ -163,7 +163,7 @@ function displayCoffees() {
 
     // Display the filtered coffees
     filteredCoffees.forEach(coffee => {
-        const li = document.createElement('li');
+        const li = document.createElement('p');
         li.textContent = coffee.name;
         coffeeList.appendChild(li);
     });

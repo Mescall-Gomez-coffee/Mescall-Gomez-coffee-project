@@ -3,112 +3,120 @@
 <head>
     <meta charset="UTF-8">
     <title></title>
+    <!--    inserting css link-->
     <link rel="stylesheet" href="style.css">
     <!--inserting bootstarp link-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 </head>
 <body>
-    <h1>Coffee!</h1>
-    <!-- test code -->
-<!--    <form autocomplete="off">-->
+<div class="cover">
+    <form action="#" class="flex-form">
+        <div class="templateBorder">
+            <h1 class="text-center">Welcome to Tarbucks <sup>&trade;</sup></h1>
+            <!--row to contain col elements for left and right sides of page-->
+            <div class="row">
+                <!--column containing different coffee choices on left hand side-->
+                <div class="col-6">
+                    <div class="container d-flex mt-5">
+                        <!--                <div class="row">-->
+                        <div class="coff">
+                            <h5 class="text-decoration-underline text-center text-black">Menu</h5>
+                            <div class="" id="coffees"></div>
+                        </div>
+                    </div>
 
-<!--            <input type="text" name="q" id="q" placeholder="coffee types"/>-->
-<!--        <div id="result"></div>-->
-<!--        <ul class="list"></ul>-->
-<!--    </form>-->
-
-    <form>
-<!--        <label for="roast-selection"></label>-->
-<!--        <select id="roast-selection">-->
-<!--            <option>light</option>-->
-<!--            <option>medium</option>-->
-<!--            <option>dark</option>-->
-<!--        </select>-->
-<!--        <input id="submit" type="submit" />-->
-
-
-<!--        <label for="name-selection"></label>-->
-<!--        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" id="name-selection">-->
-        <!--    creating coffees on left side-->
-<!--        <div id="coffees"></div>-->
+                    <!--                </div>-->
+                </div>
+                <!--column containing coffee ordering system on right hand side-->
+                <!--    top drop down menu-->
+                <div class="container col-6">
+                    <div class="container" id="topDrop">
+                        <!--coffee roast dropdown-->
+                        <div>
+                            <label for="roast-selection"></label>
+                            <h6>Roast</h6>
+                            <select class="form-select" id="roast-selection" aria-label="Default select example">
+                                <option selected>all</option>
+                                <option>Light</option>
+                                <option>Medium</option>
+                                <option>Dark</option>
+                            </select>
+                        </div>
+                        <div>
+                            <!--                coffee name input-->
+                            <h6 class="mt-1">Coffee Name</h6>
+                            <div class="input-group mb-3">
+                                <label for="name-selection"></label>
+                                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" id="name-selection">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <button class="col btn btn-outline-light" type="button">Submit</button>
+                        </div>
+                    </div>
+                    <!--bottom drop down menu-->
+                    <div class="container mt-3" id="bottomDrop">
+                        <!--                coffee roast dropdown-->
+                        <div>
+                            <h3 class="text-center">Add a Coffee</h3>
+                            <h6>Roast</h6>
+                            <select class="form-select" aria-label="Default select example">
+                                <option selected>all</option>
+                                <option>Light</option>
+                                <option>Medium</option>
+                                <option>Dark</option>
+                            </select>
+                        </div>
+                        <div>
+                            <!--                coffee name input-->
+                            <h6 class="mt-1">Name</h6>
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <button class="col btn btn-outline-light" type="button">Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--        <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">-->
+            <!--            <div class="carousel-inner">-->
+            <!--                <div class="carousel-item active">-->
+            <!--                    <img src="img/ipad.jpg" class="h-100 w-100" alt="...">-->
+            <!--                </div>-->
+            <!--                <div class="carousel-item">-->
+            <!--                    <img src="img/apple-ipad.jpg" class="h-100 w-100" alt="...">-->
+            <!--                </div>-->
+            <!--                <div class="carousel-item">-->
+            <!--                    <img src="img/security.jpg" class="h-100 w-100" alt="...">-->
+            <!--                </div>-->
+            <!--            </div>-->
+            <!--            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">-->
+            <!--                <span class="carousel-control-prev-icon" aria-hidden="true"></span>-->
+            <!--                <span class="visually-hidden">Previous</span>-->
+            <!--            </button>-->
+            <!--            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">-->
+            <!--                <span class="carousel-control-next-icon" aria-hidden="true"></span>-->
+            <!--                <span class="visually-hidden">Next</span>-->
+            <!--            </button>-->
+            <!--        </div>-->
+        </div>
     </form>
+</div>
 
 
 
-    <!--row to contain col elements for left and right sides of page-->
-    <div class="row">
-        <!--column containing different coffee choices on left hand side-->
-        <div class="container col-6 d-flex justify-content-center">
-            <div class="row ">
-                <div class="col-6 ">
-                    <div id="coffees"></div>
-                </div>
-            </div>
-        </div>
-
-        <!--column containing coffee ordering system on right hand side-->
-        <!--    top drop down menu-->
-        <div class="container col-6">
-            <div class="container border border-primary" id="topDrop">
-                <!--coffee roast dropdown-->
-                <div>
-                    <h6>Roast</h6>
-                    <label for="roast-selection"></label>
-                    <select class="form-select" id="roast-selection" aria-label="Default select example">
-                        <option selected>all</option>
-                        <option>Light</option>
-                        <option>Medium</option>
-                        <option>Dark</option>
-                    </select>
-                </div>
-                <div>
-                    <!--                coffee name input-->
-                    <h6>Coffee Name</h6>
-                    <div class="input-group mb-3">
-                        <label for="name-selection"></label>
-                        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" id="name-selection">
-                    </div>
-                </div>
-                <div class="row">
-                    <button class="col btn btn-primary" type="button">Submit</button>
-                </div>
-            </div>
-            <!--bottom drop down menu-->
-            <div class="container border border-primary" id="bottomDrop">
-                <!--                coffee roast dropdown-->
-                <div>
-                    <h3>Add a Coffee</h3>
-                    <h6>Roast</h6>
-                    <select class="form-select" aria-label="Default select example">
-                        <option selected>all</option>
-                        <option>Light</option>
-                        <option>Medium</option>
-                        <option>Dark</option>
-                    </select>
-                </div>
-                <div>
-                    <!--                coffee name input-->
-                    <h6>Name</h6>
-                    <div class="input-group mb-3">
-                        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-                    </div>
-                </div>
-                <div class="row">
-                    <button class="col btn btn-primary" type="button">Submit</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-
-
-
+<video autoplay muted loop class="coffeeBeans">
+    <source src="img/coffeeBeans.mp4">
+</video>
 
 <!--inserting bootstrap javascript link-->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
 <!--    inserting main javascript link-->
-                        <script src="main.js"></script>
+<script src="main.js"></script>
+
+
 </body>
 </html>
