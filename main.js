@@ -15,7 +15,7 @@ function renderCoffee(coffee) {
     return html;
 }
 
-// this function loops through to build the LIST of coffees
+// this function loops through to build the ARRAY LIST of coffees
 function renderCoffees(coffees) {
     var html = '';
     for(var i = coffees.length - 1; i >= 0; i--) {
@@ -29,22 +29,31 @@ function renderCoffees(coffees) {
 
 function newCoffees(e) {
     e.preventDefault(); // don't submit the form, we just want to update the data
-    console.log("preventDefault working");
     var addCoffee = coffeeAdded.value; //connect to input
-    console.log("addCoffee working");
-    var newCoffeeArr = [];
-    console.log("newCoffeeArr" + newCoffeeArr);
-    coffees.forEach(function(coffee) {
-            if (coffee.name.toLowerCase() !== addCoffee.toLowerCase()) {
-                console.log("else if working");
-                newCoffeeArr.push(addCoffee);
-            }
+    // var addRoast =
+    var newCoffeeArr = coffees;
+    coffees.every(function(coffee) {
+        if (addCoffee.toLowerCase() !== coffee.name.toLowerCase()) {
+            var addCoffeeObj = {id: coffees.length+1, name: addCoffee, roast: 'light'};
+            newCoffeeArr.push(addCoffeeObj);
+            // newCoffeeArr = renderCoffee(newCoffeeArr);
+        }
     });
     tbody.innerHTML = renderCoffees(newCoffeeArr);
 }
+// these guys listen to new coffee input and activate the buttonControl function
 var coffeeAdded = document.querySelector('#new-coffee')
-coffeeAdded.addEventListener('input', newCoffees);
+coffeeAdded.addEventListener('input', buttonControl2)
+;
+// these guys listen to roast options for adding coffee
+var addRoast = document.querySelector('#butDrop')
+addRoast.addEventListener('click', buttonControl2);
 
+// this function controls the newCoffees function by the click of a button
+function buttonControl2() {
+    var butPush2 = document.querySelector('#button-2')
+    butPush2.addEventListener('click', newCoffees);
+}
 
 
 // *************************TESTING-TESTING-TESTING*********************************
@@ -54,6 +63,7 @@ function updateCoffees(e) {
     e.preventDefault(); // don't submit the form, we just want to update the data
     var selectedRoast = roastSelection.value;
     var filteredCoffees = [];
+    console.log(filteredCoffees);
     coffees.forEach(function(coffee) {
         if (coffee.roast.toLowerCase() === selectedRoast.toLowerCase()) {
             filteredCoffees.push(coffee);
@@ -77,7 +87,7 @@ var coffees = [
     {id: 9, name: 'New Orleans', roast: 'dark'},
     {id: 10, name: 'European', roast: 'dark'},
     {id: 11, name: 'Espresso', roast: 'dark'},
-    {id: 12, name: 'Viennese', roast: 'dark'},
+    {id: 12, name: 'Vietnamese', roast: 'dark'},
     {id: 13, name: 'Italian', roast: 'dark'},
     {id: 14, name: 'French', roast: 'dark'},
 ];
@@ -108,11 +118,18 @@ function displayCoffees() {
 
     // Display the filtered coffees
     filteredCoffees.forEach(coffee => {
-        const li = document.createElement('p');
-        li.textContent = coffee.name;
-        coffeeList.appendChild(li);
+        //creating elements within tag
+        const coffeeSearch = document.createElement('p');
+        //filtering through input and reassigning values
+        coffeeSearch.textContent = coffee.name + " " + coffee.roast;
+        coffeeList.appendChild(coffeeSearch);
     });
 }
 
 // Listen for input events on the search field
-searchInput.addEventListener('input', displayCoffees);
+searchInput.addEventListener('input', buttonControl1);
+
+function buttonControl1() {
+    var butPush1 = document.querySelector('#button-1')
+    butPush1.addEventListener('click', displayCoffees);
+}
