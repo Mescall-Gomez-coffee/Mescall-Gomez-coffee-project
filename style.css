@@ -1,16 +1,14 @@
-* {
-    background: ;
-}
 
-table {
-    border-collapse: collapse;
-    margin: 15px 0;
-}
 
-td, th {
-    border: 1px solid black;
-    padding: 5px 10px;
-}
+/*table {*/
+/*    border-collapse: collapse;*/
+/*    margin: 15px 0;*/
+/*}*/
+
+/*td, th {*/
+/*    border: 1px solid black;*/
+/*    padding: 5px 10px;*/
+/*}*/
 
 .coff {
     padding-left: 4px;
@@ -44,11 +42,11 @@ td, th {
 
 }
 
-img {
-    height: 25px;
-    width: 25px;
-    position: relative;
-}
+/*img {*/
+/*    height: 25px;*/
+/*    width: 25px;*/
+/*    position: relative;*/
+/*}*/
 
 #carouselExampleAutoplaying {
     height: 150px;
@@ -66,13 +64,19 @@ h1,h2,h3,h4,h5,h6 {
     /*opacity: 0.75;*/
 }
 
-button {
-    /*color: #f4e0cb;*/
-}
-
 .templateBorder {
     padding: 8px;
     border: 15px solid #f4e0cb;
     border-radius: 8px;
     /*opacity: .5;*/
+}
+
+.coffeeName {
+    font-size: medium;
+    color: black;
+}
+
+.coffeeFlavor {
+    font-size: small;
+    color: black;
 }

@@ -4,16 +4,18 @@
 // let otherHTML = '<p class="` + thing.id + '">' + 4+6 + '</p>';
 
 //changing from table rows to divs
+// this function builds the INDIVIDUAL coffees
 function renderCoffee(coffee) {
     var html = '<div class="coffee">';
     html += '<span class"' + coffee.id + '"></span>';
-    html += '<text class="text-#9b4c38">' + coffee.name + " " + '</text>';
-    html += '<text class="text-black">' + coffee.roast + '</text>';
+    html += '<text class="coffeeName text-#9b4c38">' + coffee.name + " " + '</text>';
+    html += '<text class="coffeeFlavor text-black">' + coffee.roast + '</text>';
     html += '</div>';
 
     return html;
 }
 
+// this function loops through to build the LIST of coffees
 function renderCoffees(coffees) {
     var html = '';
     for(var i = coffees.length - 1; i >= 0; i--) {
@@ -22,7 +24,16 @@ function renderCoffees(coffees) {
     console.log(html);
     return html;
 }
+// *********************************************
 
+// coffee roast filtering system
+var roastSelection = document.querySelector('#roast-selection');
+// const coffeeList = document.querySelector('#coffees');
+
+
+
+
+// *********************************************
 function updateCoffees(e) {
     e.preventDefault(); // don't submit the form, we just want to update the data
     var selectedRoast = roastSelection.value;
@@ -34,6 +45,7 @@ function updateCoffees(e) {
     });
     tbody.innerHTML = renderCoffees(filteredCoffees);
 }
+// roastSelection.addEventListener('change', updateCoffees);
 
 // from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
 var coffees = [
@@ -121,7 +133,7 @@ var coffees = [
 
 var tbody = document.querySelector('#coffees');
 var submitButton = document.querySelector('#submit');
-var roastSelection = document.querySelector('#roast-selection');
+roastSelection = document.querySelector('#roast-selection');
 console.log(tbody);
 tbody.innerHTML = renderCoffees(coffees);
 
@@ -145,7 +157,7 @@ tbody.innerHTML = renderCoffees(coffees);
 //     return coffeeArr;
 // }
 
-
+// filtering coffee name selections and creating output on menu
 const searchInput = document.querySelector('#name-selection');
 const coffeeList = document.querySelector('#coffees');
 
@@ -157,7 +169,7 @@ function displayCoffees() {
     const searchValue = searchInput.value.toLowerCase();
 
     // Filter the coffees based on the search input
-    const filteredCoffees = coffees.filter(coffee => {
+    let filteredCoffees = coffees.filter(coffee => {
         return coffee.name.toLowerCase().includes(searchValue);
     });
 
@@ -172,6 +184,32 @@ function displayCoffees() {
 // Listen for input events on the search field
 searchInput.addEventListener('input', displayCoffees);
 
+
+//  searchInput = document.querySelector('#flavor-selection');
+//  coffeeList = document.querySelector('#coffees');
+//
+// function displayRoast() {
+//     // Clear the coffee list
+//     coffeeList.innerHTML = '';
+//
+//     // Get the user's search input
+//     const searchValue = searchInput.value.toLowerCase();
+//
+//     // Filter the coffees based on the search input
+//     const filteredCoffees = coffees.filter(coffee => {
+//         return coffee.name.toLowerCase().includes(searchValue);
+//     });
+//
+//     // Display the filtered coffees
+//     filteredCoffees.forEach(coffee => {
+//         const li = document.createElement('p');
+//         li.textContent = coffee.name;
+//         coffeeList.appendChild(li);
+//     });
+// }
+//
+// // Listen for input events on the search field
+// searchInput.addEventListener('input', displayCoffees);
 
 
 
