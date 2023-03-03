@@ -10,6 +10,7 @@
 </head>
 <body>
 <div class="cover">
+<!--    inserting nav bar-->
 <!--    000000000000000000000000000000000000000000000000-->
     <nav class="navbar navbar-dark bg-dark fixed-top">
         <div class="container-fluid">
@@ -53,6 +54,7 @@
         </div>
     </nav>
 <!--    000000000000000000000000000000000000000000000000-->
+
     <form action="#" class="flex-form">
         <div class="templateBorder">
             <h1 class="text-center">Welcome to Tarbucks <sup>&trade;</sup></h1>
@@ -78,7 +80,7 @@
                         <div>
                             <label for="roast-selection"></label>
                             <h6>Roast</h6>
-                            <select class="form-select" id="roast-selection" onchange="updateCoffees()" aria-label="Default select example">
+                            <select class="form-select" id="roast-selection" aria-label="Default select example">
                                 <option selected>all</option>
                                 <option>Light</option>
                                 <option>Medium</option>
@@ -114,7 +116,7 @@
                             <!--                coffee name input-->
                             <h6 class="mt-1">Name</h6>
                             <div class="input-group mb-3">
-                                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                                <input type="text" class="form-control" id="new-coffee" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
                             </div>
                         </div>
                         <div class="row">
