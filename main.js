@@ -30,24 +30,24 @@ function renderCoffees(coffees) {
 function newCoffees(e) {
     e.preventDefault(); // don't submit the form, we just want to update the data
     var addCoffee = coffeeAdded.value; //connect to input
-    // var addRoast =
+    var addRoast = roastAdded.value;
     var newCoffeeArr = coffees;
     coffees.every(function(coffee) {
         if (addCoffee.toLowerCase() !== coffee.name.toLowerCase()) {
-            var addCoffeeObj = {id: coffees.length+1, name: addCoffee, roast: 'light'};
+            var addCoffeeObj = {id: coffees.length+1, name: addCoffee, roast: addRoast};
             newCoffeeArr.push(addCoffeeObj);
-            // newCoffeeArr = renderCoffee(newCoffeeArr);
+
         }
     });
     tbody.innerHTML = renderCoffees(newCoffeeArr);
 }
 // these guys listen to new coffee input and activate the buttonControl function
 var coffeeAdded = document.querySelector('#new-coffee')
-coffeeAdded.addEventListener('input', buttonControl2)
-;
+coffeeAdded.addEventListener('input', buttonControl2);
+
 // these guys listen to roast options for adding coffee
-var addRoast = document.querySelector('#butDrop')
-addRoast.addEventListener('click', buttonControl2);
+var roastAdded = document.querySelector('#butDrop')
+roastAdded.addEventListener('click', buttonControl2);
 
 // this function controls the newCoffees function by the click of a button
 function buttonControl2() {
@@ -94,7 +94,7 @@ var coffees = [
 
 
 var tbody = document.querySelector('#coffees');
-var submitButton = document.querySelector('#submit');
+// var submitButton = document.querySelector('#submit');
 roastSelection = document.querySelector('#roast-selection');
 tbody.innerHTML = renderCoffees(coffees);
 
@@ -120,9 +120,17 @@ function displayCoffees() {
     filteredCoffees.forEach(coffee => {
         //creating elements within tag
         const coffeeSearch = document.createElement('p');
-        //filtering through input and reassigning values
         coffeeSearch.textContent = coffee.name + " " + coffee.roast;
         coffeeList.appendChild(coffeeSearch);
+
+        //filtering through input and reassigning values
+        // coffeeSearch.textContent = coffee.name;
+        // //creating element
+        // const roastSearch = document.createElement('span');
+        // //assigning values
+        // roastSearch.textContent = coffee.roast;
+        // const result = coffeeSearch + " " + roastSearch;
+        // coffeeList.appendChild(result);
     });
 }
 
