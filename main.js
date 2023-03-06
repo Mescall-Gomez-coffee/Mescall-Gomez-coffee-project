@@ -1,8 +1,5 @@
 "use strict"
 
-
-// let otherHTML = '<p class="` + thing.id + '">' + 4+6 + '</p>';
-
 //changing from table rows to divs
 // this function builds the INDIVIDUAL coffees
 function renderCoffee(coffee) {
@@ -75,10 +72,10 @@ function displayCoffees() {
 // Listen for input events on the search field
 searchInput.addEventListener('input', displayCoffees);
 
-function buttonControl1() {
-    var butPush1 = document.querySelector('#button-1')
-    butPush1.addEventListener('click', displayCoffees);
-}
+// function buttonControl1() {
+//     var butPush1 = document.querySelector('#button-1')
+//     butPush1.addEventListener('click', displayCoffees);
+// }
 // *************************************************************************************
 
 // this function allows us to add a new coffee while also adding in the roast
