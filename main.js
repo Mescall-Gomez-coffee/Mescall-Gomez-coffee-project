@@ -31,9 +31,12 @@ function updateCoffees(e) {
     e.preventDefault(); // don't submit the form, we just want to update the data
     var selectedRoast = roastSelection.value;
     var filteredCoffees = [];
-    console.log(filteredCoffees);
     coffees.forEach(function(coffee) {
         if (coffee.roast.toLowerCase() === selectedRoast.toLowerCase()) {
+            filteredCoffees.push(coffee);
+        }
+        else if(selectedRoast.toLowerCase() === 'all') {
+            console.log("else if working");
             filteredCoffees.push(coffee);
         }
     });
@@ -46,6 +49,7 @@ roastSelection.addEventListener('change', updateCoffees);
 // These guys belong to the displayCoffee function
 const searchInput = document.querySelector('#name-selection');
 const coffeeList = document.querySelector('#coffees');
+
 // This function allows us to search for coffees by name in the search bar
 function displayCoffees() {
     // Clear the coffee list
@@ -64,21 +68,12 @@ function displayCoffees() {
         //creating elements within tag
         const coffeeSearch = document.createElement('p');
         coffeeSearch.textContent = coffee.name + " " + coffee.roast;
-        coffeeList.appendChild(coffeeSearch);
-
-        //filtering through input and reassigning values
-        // coffeeSearch.textContent = coffee.name;
-        // //creating element
-        // const roastSearch = document.createElement('span');
-        // //assigning values
-        // roastSearch.textContent = coffee.roast;
-        // const result = coffeeSearch + " " + roastSearch;
-        // coffeeList.appendChild(result);
+        coffeeList.append(coffeeSearch);
     });
 }
 
 // Listen for input events on the search field
-searchInput.addEventListener('input', buttonControl1);
+searchInput.addEventListener('input', displayCoffees);
 
 function buttonControl1() {
     var butPush1 = document.querySelector('#button-1')
