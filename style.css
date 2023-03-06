@@ -2,7 +2,6 @@
 .coff {
     padding-left: 4px;
     background-color: white;
-    /*opacity: 0.75;*/
     border: 2px solid rgba(0, 0, 0, 0.3);
     border-radius: 5px;
 }
@@ -27,8 +26,6 @@
     height: 100vh;
     width: 100%;
     display: flex;
-    /*border: 3px solid #f4e0cb;*/
-    /*margin: 50px;*/
 }
 
 .flex-form {
@@ -39,11 +36,6 @@
 
 }
 
-/*img {*/
-/*    height: 25px;*/
-/*    width: 25px;*/
-/*    position: relative;*/
-/*}*/
 
 #carouselExampleAutoplaying {
     height: 150px;
@@ -54,18 +46,13 @@
 
 h1,h2,h3,h4,h5,h6 {
     color: #fff8d8;
-    /*opacity: 0.75;*/
 }
 
-.form-select,.input-group {
-    /*opacity: 0.75;*/
-}
 
 .templateBorder {
     padding: 8px;
     border: 15px solid #f4e0cb;
     border-radius: 8px;
-    /*opacity: .5;*/
 }
 
 .coffeeName {
